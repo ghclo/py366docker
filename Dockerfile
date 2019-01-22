@@ -37,6 +37,7 @@ COPY init_container.sh /opt/startup/init_container.sh
 RUN mkdir /opt/defaultsite
 COPY hostingstart.html /opt/defaultsite
 COPY application.py /opt/defaultsite
+COPY requirements.txt /home/site/wwwroot
 
 # configure startup
 RUN chmod -R 777 /opt/startup
