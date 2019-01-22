@@ -12,6 +12,9 @@ RUN apt-get update \
         curl \
         wget \
         tcptraceroute \
+        git \
+        cmake \
+        build-essential \
     && pip install --upgrade pip \
     && pip install subprocess32 \
     && pip install gunicorn \ 
