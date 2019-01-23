@@ -37,7 +37,14 @@ COPY init_container.sh /opt/startup/init_container.sh
 RUN mkdir /opt/defaultsite
 COPY hostingstart.html /opt/defaultsite
 COPY application.py /opt/defaultsite
+
+# clone a sample python app to wwwroot
+RUN git clone https://github.com/Azure-Samples/python-docs-hello-world /home/site/wwwroot
 COPY requirements.txt /home/site/wwwroot
+RUN cd /home/site/wwwroot \
+    && pip install -r requirements.txt
+
+
 
 # configure startup
 RUN chmod -R 777 /opt/startup
