@@ -38,6 +38,9 @@ RUN mkdir /opt/defaultsite
 COPY hostingstart.html /opt/defaultsite
 COPY application.py /opt/defaultsite
 
+# clone a sample python app to wwwroot
+RUN git clone https://github.com/Azure-Samples/python-docs-hello-world /home/site/wwwroot
+
 # configure startup
 RUN chmod -R 777 /opt/startup
 COPY entrypoint.py /usr/local/bin
