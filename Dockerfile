@@ -39,8 +39,7 @@ COPY hostingstart.html /opt/defaultsite
 COPY application.py /opt/defaultsite
 
 # clone a sample python app to wwwroot
-RUN git clone https://github.com/Azure-Samples/python-docs-hello-world /home/site/wwwroot
-COPY requirements.txt /home/site/wwwroot
+RUN git clone https://github.com/vairaselvam/python1.git /home/site/wwwroot
 RUN cd /home/site/wwwroot \
     && pip install -r requirements.txt
 
