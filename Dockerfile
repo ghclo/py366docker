@@ -40,6 +40,7 @@ COPY application.py /opt/defaultsite
 
 # clone a sample python app to wwwroot
 RUN git clone https://github.com/Azure-Samples/python-docs-hello-world /home/site/wwwroot
+COPY application.py /home/site/wwwroot
 
 # configure startup
 RUN chmod -R 777 /opt/startup
